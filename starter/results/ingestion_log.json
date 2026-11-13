@@ -1,0 +1,368 @@
+{
+  "total_physical_pages": 45,
+  "kept_pages": 36,
+  "excluded_pages": 9,
+  "total_normalized_chars": 78862,
+  "pages": [
+    {
+      "page": 1,
+      "decision": "excluded_non_content",
+      "reason": "cover_page",
+      "extraction_status": "extracted",
+      "raw_chars": 103,
+      "normalized_chars": 0
+    },
+    {
+      "page": 2,
+      "decision": "excluded_non_content",
+      "reason": "license_and_revision_history",
+      "extraction_status": "extracted",
+      "raw_chars": 1541,
+      "normalized_chars": 0
+    },
+    {
+      "page": 3,
+      "decision": "excluded_non_content",
+      "reason": "table_of_contents",
+      "extraction_status": "extracted",
+      "raw_chars": 5114,
+      "normalized_chars": 0
+    },
+    {
+      "page": 4,
+      "decision": "excluded_non_content",
+      "reason": "table_of_contents",
+      "extraction_status": "extracted",
+      "raw_chars": 6105,
+      "normalized_chars": 0
+    },
+    {
+      "page": 5,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2326,
+      "normalized_chars": 2272
+    },
+    {
+      "page": 6,
+      "decision": "excluded_non_content",
+      "reason": "acknowledgments_and_project_leads_signoff",
+      "extraction_status": "extracted",
+      "raw_chars": 898,
+      "normalized_chars": 0
+    },
+    {
+      "page": 7,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2164,
+      "normalized_chars": 2115
+    },
+    {
+      "page": 8,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2635,
+      "normalized_chars": 2591
+    },
+    {
+      "page": 9,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2482,
+      "normalized_chars": 2445
+    },
+    {
+      "page": 10,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2283,
+      "normalized_chars": 2251
+    },
+    {
+      "page": 11,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2235,
+      "normalized_chars": 2187
+    },
+    {
+      "page": 12,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1714,
+      "normalized_chars": 1679
+    },
+    {
+      "page": 13,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1919,
+      "normalized_chars": 1887
+    },
+    {
+      "page": 14,
+      "decision": "excluded_non_content",
+      "reason": "reference_overflow_only_two_bullets",
+      "extraction_status": "extracted",
+      "raw_chars": 149,
+      "normalized_chars": 0
+    },
+    {
+      "page": 15,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1963,
+      "normalized_chars": 1912
+    },
+    {
+      "page": 16,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2981,
+      "normalized_chars": 2933
+    },
+    {
+      "page": 17,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 3005,
+      "normalized_chars": 2955
+    },
+    {
+      "page": 18,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2947,
+      "normalized_chars": 2901
+    },
+    {
+      "page": 19,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2046,
+      "normalized_chars": 2009
+    },
+    {
+      "page": 20,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2165,
+      "normalized_chars": 2114
+    },
+    {
+      "page": 21,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2175,
+      "normalized_chars": 2137
+    },
+    {
+      "page": 22,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1476,
+      "normalized_chars": 1439
+    },
+    {
+      "page": 23,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2177,
+      "normalized_chars": 2134
+    },
+    {
+      "page": 24,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2447,
+      "normalized_chars": 2405
+    },
+    {
+      "page": 25,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1615,
+      "normalized_chars": 1571
+    },
+    {
+      "page": 26,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1713,
+      "normalized_chars": 1663
+    },
+    {
+      "page": 27,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2562,
+      "normalized_chars": 2522
+    },
+    {
+      "page": 28,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 3125,
+      "normalized_chars": 3078
+    },
+    {
+      "page": 29,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1499,
+      "normalized_chars": 1450
+    },
+    {
+      "page": 30,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2376,
+      "normalized_chars": 2323
+    },
+    {
+      "page": 31,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2781,
+      "normalized_chars": 2730
+    },
+    {
+      "page": 32,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1504,
+      "normalized_chars": 1460
+    },
+    {
+      "page": 33,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2166,
+      "normalized_chars": 2116
+    },
+    {
+      "page": 34,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2342,
+      "normalized_chars": 2301
+    },
+    {
+      "page": 35,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2147,
+      "normalized_chars": 2105
+    },
+    {
+      "page": 36,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1954,
+      "normalized_chars": 1904
+    },
+    {
+      "page": 37,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2549,
+      "normalized_chars": 2511
+    },
+    {
+      "page": 38,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2372,
+      "normalized_chars": 2337
+    },
+    {
+      "page": 39,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2055,
+      "normalized_chars": 2009
+    },
+    {
+      "page": 40,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2337,
+      "normalized_chars": 2298
+    },
+    {
+      "page": 41,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 2333,
+      "normalized_chars": 2298
+    },
+    {
+      "page": 42,
+      "decision": "kept",
+      "reason": "substantive_content",
+      "extraction_status": "extracted",
+      "raw_chars": 1852,
+      "normalized_chars": 1820
+    },
+    {
+      "page": 43,
+      "decision": "excluded_non_content",
+      "reason": "image_only_appendix_no_extractable_text",
+      "extraction_status": "extracted",
+      "raw_chars": 139,
+      "normalized_chars": 0
+    },
+    {
+      "page": 44,
+      "decision": "excluded_error",
+      "reason": "sponsors_page_garbled_encoding",
+      "extraction_status": "garbled_encoding",
+      "raw_chars": 577,
+      "normalized_chars": 0
+    },
+    {
+      "page": 45,
+      "decision": "excluded_error",
+      "reason": "supporters_page_garbled_encoding",
+      "extraction_status": "garbled_encoding",
+      "raw_chars": 564,
+      "normalized_chars": 0
+    }
+  ]
+}

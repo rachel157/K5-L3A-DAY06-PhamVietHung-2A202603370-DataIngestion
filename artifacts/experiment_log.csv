@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed_size,500,50,"document_id,source,page,risk_id,risk_title,printed_page",none,openai/text-embedding-3-small (1536d),"Baseline fixed windows may split sentences, headings, or multi-bullet evidence across boundaries.",5/15 (0.3333),7/15 (0.4667),2/5 (0.4000),2/5 (0.4000),Controlled baseline: fixed_size chunking without section_type filter.
+B,by_paragraph,1050,0,"document_id,source,page,risk_id,risk_title,printed_page,section_type",none,openai/text-embedding-3-small (1536d),Paragraph- and section-aware grouping preserves complete ideas and multi-bullet evidence better than A.,12/15 (0.8000),14/15 (0.9333),3/5 (0.6000),3/5 (0.6000),Changes only chunking vs A; section_type stored in metadata but not filtered at search time.
+C,by_paragraph,1050,0,"document_id,source,page,risk_id,risk_title,printed_page,section_type",section_type when specified in benchmark question,openai/text-embedding-3-small (1536d),Applying section_type SQL filter on top of B improves scope compliance and separates mitigation/scenario hits from description/references.,12/15 (0.8000),14/15 (0.9333),3/5 (0.6000),3/5 (0.6000),Changes only retrieval filter vs B; runs unfiltered for questions with filter=null.

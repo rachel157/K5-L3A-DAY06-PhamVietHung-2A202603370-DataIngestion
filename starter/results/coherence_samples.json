@@ -1,0 +1,534 @@
+{
+  "description": "10 pre-locked source text positions selected across LLM01-LLM10 prior to chunking/retrieval experiments for manual Chunk Coherence grading (0-2 scale).",
+  "grading_scale": "0 = cut mid-idea/missing subject; 1 = partially understandable/missing context; 2 = self-contained and preserves idea",
+  "note": "Strategies B and C share identical by_paragraph chunks; C adds retrieval-time section_type filtering.",
+  "samples": [
+    {
+      "position_id": "pos01",
+      "page": 7,
+      "risk_id": "LLM01",
+      "section_type": "description",
+      "anchor_quote": "While techniques like Retrieval Augmented Generation (RAG) and fine-tuning aim to make LLM outputs more relevant and accurate",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p07:c002",
+              "page": 7,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM01",
+              "anchor_contained": true,
+              "text": "l to incorrectly pass prompt data to other parts of the model, potentially causing them to violate guidelines, generate harmful content, enable unauthorized access, or influence critical decisions. While techniques like Retrieval Augmented Generation (RAG) and fine-tuning aim to make LLM outputs more relevant and accurate, research shows that they do not fully mitigate prompt injection vulnerabilities. While prompt injection and jailbreaking are related concepts in LLM security, they are often u"
+            }
+          ],
+          "human_score": 1,
+          "human_rationale": "Chứa trọn câu về RAG ở vị trí neo nhưng đầu chunk bị cắt giữa từ ('l to...') và cuối cụt ('are often u'), mất câu mở đầu định nghĩa LLM01."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p07:c001",
+              "page": 7,
+              "char_len": 970,
+              "section_type": "description",
+              "risk_id": "LLM01",
+              "anchor_contained": true,
+              "text": "LLM01:2025 Prompt Injection\n\nDescription\n\nA Prompt Injection Vulnerability occurs when user prompts alter the LLM’s behavior or output in unintended ways. These inputs can affect the model even if they are imperceptible to humans, therefore prompt injections do not need to be human-visible/readable, as long as the content is parsed by the model. Prompt Injection vulnerabilities exist in how models process prompts, and how input may force the model to incorrectly pass prompt data to other parts of the model, potentially causing them to violate guidelines, generate harmful content, enable unauthorized access, or influence critical decisions. While techniques like Retrieval Augmented Generation (RAG) and fine-tuning aim to make LLM outputs more relevant and accurate, research shows that they do not fully mitigate prompt injection vulnerabilities. While prompt injection and jailbreaking are related concepts in LLM security, they are often used interchangeably."
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Có tiêu đề LLM01:2025 + Description và giữ trọn đoạn giải thích lẫn câu kết."
+        }
+      }
+    },
+    {
+      "position_id": "pos02",
+      "page": 12,
+      "risk_id": "LLM02",
+      "section_type": "mitigation",
+      "anchor_quote": "Implement data sanitization to prevent user data from entering the training model.",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p12:c001",
+              "page": 12,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM02",
+              "anchor_contained": true,
+              "text": "Prevention and Mitigation Strategies\n\nSanitization:\n\n1. Integrate Data Sanitization Techniques\n\nImplement data sanitization to prevent user data from entering the training model. This includes scrubbing or masking sensitive content before it is used in training.\n\n2. Robust Input Validation\n\nApply strict input validation methods to detect and filter out potentially harmful or sensitive data inputs, ensuring they do not compromise the model.\n\nAccess Controls:\n\n1. Enforce Strict Access Controls\n\nLi"
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Mở đầu bằng tiêu đề Prevention and Mitigation Strategies -> Sanitization và giữ trọn cả mục 1-2; chỉ cắt đầu mục Access Controls mới ở cuối."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p12:c001",
+              "page": 12,
+              "char_len": 888,
+              "section_type": "mitigation",
+              "risk_id": "LLM02",
+              "anchor_contained": true,
+              "text": "Prevention and Mitigation Strategies\n\nSanitization:\n\n1. Integrate Data Sanitization Techniques\n\nImplement data sanitization to prevent user data from entering the training model. This includes scrubbing or masking sensitive content before it is used in training.\n\n2. Robust Input Validation\n\nApply strict input validation methods to detect and filter out potentially harmful or sensitive data inputs, ensuring they do not compromise the model.\n\nAccess Controls:\n\n1. Enforce Strict Access Controls\n\nLimit access to sensitive data based on the principle of least privilege. Only grant access to data that is necessary for the specific user or process.\n\n2. Restrict Data Sources\n\nLimit model access to external data sources, and ensure runtime data orchestration is securely managed to avoid unintended data leakage.\n\nFederated Learning and Privacy Techniques:\n\n1. Utilize Federated Learning"
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ nguyên vẹn toàn bộ tiêu đề section, các mục Sanitization 1-2 và Access Controls 1-2 với câu văn hoàn chỉnh."
+        }
+      }
+    },
+    {
+      "position_id": "pos03",
+      "page": 16,
+      "risk_id": "LLM03",
+      "section_type": "examples",
+      "anchor_quote": "LoRA is a popular fine-tuning technique that enhances modularity by allowing pre-trained layers to be bolted onto an existing LLM.",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p16:c003",
+              "page": 16,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM03",
+              "anchor_contained": true,
+              "text": "ion.\n\n6. Vulnerable LoRA adapters\n\nLoRA is a popular fine-tuning technique that enhances modularity by allowing pre-trained layers to be bolted onto an existing LLM. The method increases efficiency but create new risks, where a malicious LorA adapter compromises the integrity and security of the pretrained base model. This can happen both in collaborative model merge environments but also exploiting the support for LoRA from popular inference deployment platforms such as vLMM and OpenLLM where a"
+            }
+          ],
+          "human_score": 1,
+          "human_rationale": "Giữ được tiêu đề mục 6 và hai câu đầu về LoRA nhưng cắt giữa cụm cuối ('where a'), mất phần cơ chế tải/áp dụng adapter lên mô hình triển khai."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p16:c002",
+              "page": 16,
+              "char_len": 1020,
+              "section_type": "examples",
+              "risk_id": "LLM03",
+              "anchor_contained": true,
+              "text": "LoRA is a popular fine-tuning technique that enhances modularity by allowing pre-trained layers to be bolted onto an existing LLM. The method increases efficiency but create new risks, where a malicious LorA adapter compromises the integrity and security of the pretrained base model. This can happen both in collaborative model merge environments but also exploiting the support for LoRA from popular inference deployment platforms such as vLMM and OpenLLM where adapters can be downloaded and applied to a deployed model.\n\n7. Exploit Collaborative Development Processes\n\nCollaborative model merge and model handling services (e.g. conversions) hosted in shared environments can be exploited to introduce vulnerabilities in shared models. Model merging is is very popular on Hugging Face with model-merged models topping the OpenLLM leaderboard and can be exploited to bypass reviews. Similarly, services such as conversation bot have been proved to be vulnerable to maniputalion and introduce malicious code in models."
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ trọn vẹn toàn bộ mục 6 (Vulnerable LoRA adapters) và mục 7 (Exploit Collaborative Development Processes)."
+        }
+      }
+    },
+    {
+      "position_id": "pos04",
+      "page": 20,
+      "risk_id": "LLM04",
+      "section_type": "description",
+      "anchor_quote": "Data poisoning can target different stages of the LLM lifecycle, including pre-training (learning from general data), fine-tuning",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p20:c001",
+              "page": 20,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM04",
+              "anchor_contained": false,
+              "text": "LLM04: Data and Model Poisoning\n\nDescription\n\nData poisoning occurs when pre-training, fine-tuning, or embedding data is manipulated to introduce vulnerabilities, backdoors, or biases. This manipulation can compromise model security, performance, or ethical behavior, leading to harmful outputs or impaired capabilities. Common risks include degraded model performance, biased or toxic content, and exploitation of downstream systems. Data poisoning can target different stages of the LLM lifecycle,"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p20:c002",
+              "page": 20,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM04",
+              "anchor_contained": false,
+              "text": "can target different stages of the LLM lifecycle, including pre-training (learning from general data), fine-tuning (adapting models to specific tasks), and embedding (converting text into numerical vectors). Understanding these stages helps identify where vulnerabilities may originate. Data poisoning is considered an integrity attack since tampering with training data impacts the model's ability to make accurate predictions. The risks are particularly high with external data sources, which may c"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p20:c003",
+              "page": 20,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM04",
+              "anchor_contained": false,
+              "text": "larly high with external data sources, which may contain unverified or malicious content. Moreover, models distributed through shared repositories or open-source platforms can carry risks beyond data poisoning, such as malware embedded through techniques like malicious pickling, which can execute harmful code when the model is loaded. Also, consider that poisoning may allow for the implementation of a backdoor. Such backdoors may leave the model's behavior untouched until a certain trigger cause"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p20:c004",
+              "page": 20,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM04",
+              "anchor_contained": false,
+              "text": "s behavior untouched until a certain trigger causes it to change. This may make such changes hard to test for and detect, in effect creating the opportunity for a model to become a sleeper agent.\n\nCommon Examples of Vulnerability\n\n1. Malicious actors introduce harmful data during training, leading to biased outputs. Techniques like \"Split-View Data Poisoning\" or \"Frontrunning Poisoning\" exploit model training dynamics to achieve this. (Ref. link: Split-View Data Poisoning) (Ref. link: Frontrunni"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p20:c005",
+              "page": 20,
+              "char_len": 313,
+              "section_type": null,
+              "risk_id": "LLM04",
+              "anchor_contained": false,
+              "text": "Split-View Data Poisoning) (Ref. link: Frontrunning Poisoning)\n\n2. Attackers can inject harmful content directly into the training process, compromising the model’s output quality.\n\n3. Users unknowingly inject sensitive or proprietary information during interactions, which could be exposed in subsequent outputs."
+            }
+          ],
+          "human_score": 0,
+          "human_rationale": "Câu ở vị trí neo bị cắt làm đôi giữa fixed:p20:c001 ('...LLM lifecycle,') và fixed:p20:c002 ('can target different stages...'), khiến chunk thứ hai mất chủ ngữ 'Data poisoning'."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p20:c001",
+              "page": 20,
+              "char_len": 989,
+              "section_type": "description",
+              "risk_id": "LLM04",
+              "anchor_contained": true,
+              "text": "LLM04: Data and Model Poisoning\n\nDescription\n\nData poisoning occurs when pre-training, fine-tuning, or embedding data is manipulated to introduce vulnerabilities, backdoors, or biases. This manipulation can compromise model security, performance, or ethical behavior, leading to harmful outputs or impaired capabilities. Common risks include degraded model performance, biased or toxic content, and exploitation of downstream systems. Data poisoning can target different stages of the LLM lifecycle, including pre-training (learning from general data), fine-tuning (adapting models to specific tasks), and embedding (converting text into numerical vectors). Understanding these stages helps identify where vulnerabilities may originate. Data poisoning is considered an integrity attack since tampering with training data impacts the model's ability to make accurate predictions. The risks are particularly high with external data sources, which may contain unverified or malicious content."
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ đầy đủ tiêu đề LLM04, Description và trọn vẹn đoạn mô tả các giai đoạn vòng đời bị poisoning."
+        }
+      }
+    },
+    {
+      "position_id": "pos05",
+      "page": 23,
+      "risk_id": "LLM05",
+      "section_type": "description",
+      "anchor_quote": "Improper Output Handling differs from Overreliance in that it deals with LLM-generated outputs before they are passed downstream",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p23:c001",
+              "page": 23,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM05",
+              "anchor_contained": false,
+              "text": "LLM05:2025 Improper Output Handling\n\nDescription\n\nImproper Output Handling refers specifically to insufficient validation, sanitization, and handling of the outputs generated by large language models before they are passed downstream to other components and systems. Since LLM-generated content can be controlled by prompt input, this behavior is similar to providing users indirect access to additional functionality. Improper Output Handling differs from Overreliance in that it deals with LLM-gene"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p23:c002",
+              "page": 23,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM05",
+              "anchor_contained": false,
+              "text": "s from Overreliance in that it deals with LLM-generated outputs before they are passed downstream whereas Overreliance focuses on broader concerns around overdependence on the accuracy and appropriateness of LLM outputs. Successful exploitation of an Improper Output Handling vulnerability can result in XSS and CSRF in web browsers as well as SSRF, privilege escalation, or remote code execution on backend systems. The following conditions can increase the impact of this vulnerability:\n\n• The appl"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p23:c003",
+              "page": 23,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM05",
+              "anchor_contained": false,
+              "text": "ease the impact of this vulnerability:\n\n• The application grants the LLM privileges beyond what is intended for end users, enabling escalation of privileges or remote code execution.\n\n• The application is vulnerable to indirect prompt injection attacks, which could allow an attacker to gain privileged access to a target user's environment.\n\n• 3rd party extensions do not adequately validate inputs.\n\n• Lack of proper output encoding for different contexts (e.g., HTML, JavaScript, SQL)\n\n• Insuffici"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p23:c004",
+              "page": 23,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM05",
+              "anchor_contained": false,
+              "text": "ontexts (e.g., HTML, JavaScript, SQL)\n\n• Insufficient monitoring and logging of LLM outputs\n\n• Absence of rate limiting or anomaly detection for LLM usage\n\nCommon Examples of Vulnerability\n\n1. LLM output is entered directly into a system shell or similar function such as exec or eval, resulting in remote code execution.\n\n2. JavaScript or Markdown is generated by the LLM and returned to a user. The code is then interpreted by the browser, resulting in XSS.\n\n3. LLM-generated SQL queries are execut"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p23:c005",
+              "page": 23,
+              "char_len": 334,
+              "section_type": null,
+              "risk_id": "LLM05",
+              "anchor_contained": false,
+              "text": "g in XSS.\n\n3. LLM-generated SQL queries are executed without proper parameterization, leading to SQL injection.\n\n4. LLM output is used to construct file paths without proper sanitization, potentially resulting in path traversal vulnerabilities.\n\n5. LLM-generated content is used in email templates without proper escaping, potentially"
+            }
+          ],
+          "human_score": 0,
+          "human_rationale": "Câu so sánh ở vị trí neo bị cắt giữa từ ('...LLM-gene' -> 's from Overreliance...'), khiến chunk thứ hai mất hoàn toàn chủ ngữ 'Improper Output Handling'."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p23:c001",
+              "page": 23,
+              "char_len": 938,
+              "section_type": "description",
+              "risk_id": "LLM05",
+              "anchor_contained": true,
+              "text": "LLM05:2025 Improper Output Handling\n\nDescription\n\nImproper Output Handling refers specifically to insufficient validation, sanitization, and handling of the outputs generated by large language models before they are passed downstream to other components and systems. Since LLM-generated content can be controlled by prompt input, this behavior is similar to providing users indirect access to additional functionality. Improper Output Handling differs from Overreliance in that it deals with LLM-generated outputs before they are passed downstream whereas Overreliance focuses on broader concerns around overdependence on the accuracy and appropriateness of LLM outputs. Successful exploitation of an Improper Output Handling vulnerability can result in XSS and CSRF in web browsers as well as SSRF, privilege escalation, or remote code execution on backend systems. The following conditions can increase the impact of this vulnerability:"
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ nguyên tiêu đề LLM05:2025 Improper Output Handling, Description và đoạn phân biệt đầy đủ với Overreliance."
+        }
+      }
+    },
+    {
+      "position_id": "pos06",
+      "page": 27,
+      "risk_id": "LLM06",
+      "section_type": "examples",
+      "anchor_quote": "An LLM extension has permissions on downstream systems that are not needed for the intended operation of the application.",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p27:c001",
+              "page": 27,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM06",
+              "anchor_contained": false,
+              "text": "An LLM agent has access to extensions which include functions that are not needed for the intended operation of the system. For example, a developer needs to grant an LLM agent the ability to read documents from a repository, but the 3rd-party extension they choose to use also includes the ability to modify and delete documents.\n\n2. Excessive Functionality\n\nAn extension may have been trialled during a development phase and dropped in favor of a better alternative, but the original plugin remains"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p27:c002",
+              "page": 27,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM06",
+              "anchor_contained": false,
+              "text": "etter alternative, but the original plugin remains available to the LLM agent.\n\n3. Excessive Functionality\n\nAn LLM plugin with open-ended functionality fails to properly filter the input instructions for commands outside what's necessary for the intended operation of the application. E.g., an extension to run one specific shell command fails to properly prevent other shell commands from being executed.\n\n4. Excessive Permissions\n\nAn LLM extension has permissions on downstream systems that are not"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p27:c003",
+              "page": 27,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM06",
+              "anchor_contained": false,
+              "text": "has permissions on downstream systems that are not needed for the intended operation of the application. E.g., an extension intended to read data connects to a database server using an identity that not only has SELECT permissions, but also UPDATE, INSERT and DELETE permissions.\n\n5. Excessive Permissions\n\nAn LLM extension that is designed to perform operations in the context of an individual user accesses downstream systems with a generic high-privileged identity. E.g., an extension to read the"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p27:c004",
+              "page": 27,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM06",
+              "anchor_contained": false,
+              "text": "ivileged identity. E.g., an extension to read the current user's document store connects to the document repository with a privileged account that has access to files belonging to all users.\n\n6. Excessive Autonomy\n\nAn LLM-based application or extension fails to independently verify and approve high-impact actions. E.g., an extension that allows a user's documents to be deleted performs deletions without any confirmation from the user.\n\nPrevention and Mitigation Strategies\n\nThe following actions"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p27:c005",
+              "page": 27,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM06",
+              "anchor_contained": false,
+              "text": "and Mitigation Strategies\n\nThe following actions can prevent Excessive Agency:\n\n1. Minimize extensions\n\nLimit the extensions that LLM agents are allowed to call to only the minimum necessary. For example, if an LLM-based system does not require the ability to fetch the contents of a URL then such an extension should not be offered to the LLM agent.\n\n2. Minimize extension functionality\n\nLimit the functions that are implemented in LLM extensions to the minimum necessary. For example, an extension"
+            },
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p27:c006",
+              "page": 27,
+              "char_len": 272,
+              "section_type": null,
+              "risk_id": "LLM06",
+              "anchor_contained": false,
+              "text": "o the minimum necessary. For example, an extension that accesses a user's mailbox to summarise emails may only require the ability to read emails, so the extension should not contain other functionality such as deleting or sending messages.\n\n3. Avoid open-ended extensions"
+            }
+          ],
+          "human_score": 0,
+          "human_rationale": "Câu neo bị cắt đôi giữa 'that are not' (c002) và 'has permissions...' (c003), khiến chunk thứ ba mất chủ ngữ 'An LLM extension'."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p27:c002",
+              "page": 27,
+              "char_len": 905,
+              "section_type": "examples",
+              "risk_id": "LLM06",
+              "anchor_contained": true,
+              "text": "An LLM extension has permissions on downstream systems that are not needed for the intended operation of the application. E.g., an extension intended to read data connects to a database server using an identity that not only has SELECT permissions, but also UPDATE, INSERT and DELETE permissions.\n\n5. Excessive Permissions\n\nAn LLM extension that is designed to perform operations in the context of an individual user accesses downstream systems with a generic high-privileged identity. E.g., an extension to read the current user's document store connects to the document repository with a privileged account that has access to files belonging to all users.\n\n6. Excessive Autonomy\n\nAn LLM-based application or extension fails to independently verify and approve high-impact actions. E.g., an extension that allows a user's documents to be deleted performs deletions without any confirmation from the user."
+            }
+          ],
+          "human_score": 1,
+          "human_rationale": "Giữ trọn câu mô tả, ví dụ CSDL và các mục 5-6, nhưng thiếu tiêu đề mục '4. Excessive Permissions' và bối cảnh LLM06 ở chunk trước."
+        }
+      }
+    },
+    {
+      "position_id": "pos07",
+      "page": 30,
+      "risk_id": "LLM07",
+      "section_type": "description",
+      "anchor_quote": "It's important to understand that the system prompt should not be considered a secret, nor should it be used as a security control.",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p30:c002",
+              "page": 30,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM07",
+              "anchor_contained": true,
+              "text": "n be used to facilitate other attacks. It's important to understand that the system prompt should not be considered a secret, nor should it be used as a security control. Accordingly, sensitive data such as credentials, connection strings, etc. should not be contained within the system prompt language. Similarly, if a system prompt contains information describing different roles and permissions, or sensitive data like connection strings or passwords, while the disclosure of such information may"
+            }
+          ],
+          "human_score": 1,
+          "human_rationale": "Giữ trọn câu neo với chủ ngữ 'system prompt', nhưng đầu chunk cắt giữa từ ('n be used...') và câu cuối bị cắt dở ('while the disclosure... may')."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p30:c001",
+              "page": 30,
+              "char_len": 753,
+              "section_type": "description",
+              "risk_id": "LLM07",
+              "anchor_contained": true,
+              "text": "LLM07:2025 System Prompt Leakage\n\nDescription\n\nThe system prompt leakage vulnerability in LLMs refers to the risk that the system prompts or instructions used to steer the behavior of the model can also contain sensitive information that was not intended to be discovered. System prompts are designed to guide the model's output based on the requirements of the application, but may inadvertently contain secrets. When discovered, this information can be used to facilitate other attacks. It's important to understand that the system prompt should not be considered a secret, nor should it be used as a security control. Accordingly, sensitive data such as credentials, connection strings, etc. should not be contained within the system prompt language."
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ nguyên tiêu đề LLM07:2025 System Prompt Leakage, Description và trọn đoạn cảnh báo không coi system prompt là bí mật."
+        }
+      }
+    },
+    {
+      "position_id": "pos08",
+      "page": 33,
+      "risk_id": "LLM08",
+      "section_type": "examples",
+      "anchor_quote": "In multi-tenant environments where multiple classes of users or applications share the same vector database",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p33:c003",
+              "page": 33,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM08",
+              "anchor_contained": true,
+              "text": "embeddings containing sensitive information. If not properly managed, the model could retrieve and disclose personal data, proprietary information, or other sensitive content. Unauthorized use of copyrighted material or non-compliance with data usage policies during augmentation can lead to legal repercussions.\n\n2. Cross-Context Information Leaks and Federation Knowledge Conflict In multi-tenant environments where multiple classes of users or applications share the same vector database, there's"
+            }
+          ],
+          "human_score": 0,
+          "human_rationale": "Câu tại vị trí neo bị cắt ngay sau 'there's' ở cuối fixed:p33:c003, làm mất toàn bộ mệnh đề chính về rủi ro rò rỉ ngữ cảnh multi-tenant."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p33:c002",
+              "page": 33,
+              "char_len": 986,
+              "section_type": "examples",
+              "risk_id": "LLM08",
+              "anchor_contained": true,
+              "text": "Common Examples of Risks\n\n1. Unauthorized Access & Data Leakage\n\nInadequate or misaligned access controls can lead to unauthorized access to embeddings containing sensitive information. If not properly managed, the model could retrieve and disclose personal data, proprietary information, or other sensitive content. Unauthorized use of copyrighted material or non-compliance with data usage policies during augmentation can lead to legal repercussions.\n\n2. Cross-Context Information Leaks and Federation Knowledge Conflict In multi-tenant environments where multiple classes of users or applications share the same vector database, there's a risk of context leakage between users or queries. Data federation knowledge conflict errors can occur when data from multiple sources contradict each other (Ref #2). This can also happen when an LLM can’t supersede old knowledge that it has learned while training, with the new data from Retrieval Augmentation.\n\n3. Embedding Inversion Attacks"
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ trọn tiêu đề Common Examples of Risks cùng mục 1 và mục 2 hoàn chỉnh về rò rỉ ngữ cảnh multi-tenant."
+        }
+      }
+    },
+    {
+      "position_id": "pos09",
+      "page": 36,
+      "risk_id": "LLM09",
+      "section_type": "description",
+      "anchor_quote": "One of the major causes of misinformation is hallucination—when the LLM generates content that seems accurate but is fabricated.",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p36:c001",
+              "page": 36,
+              "char_len": 499,
+              "section_type": null,
+              "risk_id": "LLM09",
+              "anchor_contained": true,
+              "text": "LLM09:2025 Misinformation\n\nDescription\n\nMisinformation from LLMs poses a core vulnerability for applications relying on these models. Misinformation occurs when LLMs produce false or misleading information that appears credible. This vulnerability can lead to security breaches, reputational damage, and legal liability. One of the major causes of misinformation is hallucination—when the LLM generates content that seems accurate but is fabricated. Hallucinations occur when LLMs fill gaps in their"
+            }
+          ],
+          "human_score": 1,
+          "human_rationale": "Có tiêu đề LLM09 và giữ trọn câu định nghĩa hallucination ở vị trí neo, nhưng câu giải thích cơ chế ngay sau bị cắt dở ('gaps in their')."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p36:c001",
+              "page": 36,
+              "char_len": 992,
+              "section_type": "description",
+              "risk_id": "LLM09",
+              "anchor_contained": true,
+              "text": "LLM09:2025 Misinformation\n\nDescription\n\nMisinformation from LLMs poses a core vulnerability for applications relying on these models. Misinformation occurs when LLMs produce false or misleading information that appears credible. This vulnerability can lead to security breaches, reputational damage, and legal liability. One of the major causes of misinformation is hallucination—when the LLM generates content that seems accurate but is fabricated. Hallucinations occur when LLMs fill gaps in their training data using statistical patterns, without truly understanding the content. As a result, the model may produce answers that sound correct but are completely unfounded. While hallucinations are a major source of misinformation, they are not the only cause; biases introduced by the training data and incomplete information can also contribute. A related issue is overreliance. Overreliance occurs when users place excessive trust in LLMgenerated content, failing to verify its accuracy."
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Giữ trọn tiêu đề LLM09:2025 Misinformation, Description và toàn bộ đoạn giải thích hallucination cùng overreliance."
+        }
+      }
+    },
+    {
+      "position_id": "pos10",
+      "page": 40,
+      "risk_id": "LLM10",
+      "section_type": "mitigation",
+      "anchor_quote": "Restrict or obfuscate the exposure of `logit_bias` and `logprobs` in API responses.",
+      "strategies": {
+        "A_fixed_size": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:fixed:p40:c003",
+              "page": 40,
+              "char_len": 500,
+              "section_type": null,
+              "risk_id": "LLM10",
+              "anchor_contained": true,
+              "text": "s do not exceed reasonable size limits.\n\n2. Limit Exposure of Logits and Logprobs Restrict or obfuscate the exposure of `logit_bias` and `logprobs` in API responses. Provide only the necessary information without revealing detailed probabilities.\n\n3. Rate Limiting\n\nApply rate limiting and user quotas to restrict the number of requests a single source entity can make in a given time period.\n\n4. Resource Allocation Management\n\nMonitor and manage resource allocation dynamically to prevent any singl"
+            }
+          ],
+          "human_score": 1,
+          "human_rationale": "Giữ trọn mục 2 (Logits/Logprobs) và mục 3 (Rate Limiting), nhưng mất tiêu đề section Prevention and Mitigation Strategies và cắt dở đầu/cuối."
+        },
+        "B_C_by_paragraph": {
+          "covering_chunks": [
+            {
+              "chunk_id": "owasp-llm-top10-2025:para:p40:c002",
+              "page": 40,
+              "char_len": 694,
+              "section_type": "mitigation",
+              "risk_id": "LLM10",
+              "anchor_contained": true,
+              "text": "Prevention and Mitigation Strategies\n\n1. Input Validation\n\nImplement strict input validation to ensure that inputs do not exceed reasonable size limits.\n\n2. Limit Exposure of Logits and Logprobs Restrict or obfuscate the exposure of `logit_bias` and `logprobs` in API responses. Provide only the necessary information without revealing detailed probabilities.\n\n3. Rate Limiting\n\nApply rate limiting and user quotas to restrict the number of requests a single source entity can make in a given time period.\n\n4. Resource Allocation Management\n\nMonitor and manage resource allocation dynamically to prevent any single user or request from consuming excessive resources.\n\n5. Timeouts and Throttling"
+            }
+          ],
+          "human_score": 2,
+          "human_rationale": "Mở đầu bằng Prevention and Mitigation Strategies và giữ nguyên vẹn các biện pháp 1-4 hoàn chỉnh."
+        }
+      }
+    }
+  ],
+  "annotator": "AI-assisted draft reviewed and confirmed by author (Pham Viet Hung)",
+  "human_audit_summary": {
+    "n_positions": 10,
+    "A_fixed_size": {
+      "counts": {
+        "0": 4,
+        "1": 5,
+        "2": 1
+      },
+      "mean_score": 0.7
+    },
+    "B_C_by_paragraph": {
+      "counts": {
+        "0": 0,
+        "1": 1,
+        "2": 9
+      },
+      "mean_score": 1.9
+    }
+  }
+}

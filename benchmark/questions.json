@@ -1,0 +1,352 @@
+{
+  "benchmark_version": "1.0",
+  "corpus_id": "owasp-llm-top10-2025",
+  "split_strategy": "Topic-level holdout split by risk_id: dev covers OVERVIEW and LLM01, LLM02, LLM03, LLM04, LLM05, LLM07, LLM09 (15 questions); test covers unseen topics LLM06, LLM08, LLM10 (5 questions). Residual leakage risk: dev and test share OWASP document style and recurring subsection templates (Description, Examples, Mitigation, Scenarios).",
+  "filter_policy": "Metadata filter uses section_type (description, examples, mitigation, scenarios) as an assumed pre-retrieval user/UI context; gold_risk_id and gold_page are never passed in queries or filters.",
+  "questions": [
+    {
+      "id": "q01",
+      "split": "dev",
+      "question_type": "direct",
+      "question": "Why was the Vector and Embeddings entry added to the 2025 OWASP Top 10 for LLM Applications?",
+      "expected_answer": "It responds to community requests for guidance on securing Retrieval-Augmented Generation (RAG) and other embedding-based methods used to ground model outputs.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 5,
+      "alternative_gold_pages": [],
+      "evidence_quote": "The Vector and Embeddings entry responds to the community’s requests for guidance on securing Retrieval-Augmented Generation (RAG) and other embedding-based methods, now core practices for grounding model outputs.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "OVERVIEW",
+      "gold_section_type": "overview",
+      "notes": "Direct overview question covering 2025 changes."
+    },
+    {
+      "id": "q02",
+      "split": "dev",
+      "question_type": "conditional_exception",
+      "question": "Do Retrieval Augmented Generation (RAG) and fine-tuning completely prevent prompt injection vulnerabilities?",
+      "expected_answer": "No. While RAG and fine-tuning aim to make LLM outputs more relevant and accurate, research shows they do not fully mitigate prompt injection vulnerabilities.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 7,
+      "alternative_gold_pages": [],
+      "evidence_quote": "While techniques like Retrieval Augmented Generation (RAG) and fine-tuning aim to make LLM outputs more relevant and accurate, research shows that they do not fully mitigate prompt injection vulnerabilities.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM01",
+      "gold_section_type": "description",
+      "notes": "Tests conditional/limitation nuance."
+    },
+    {
+      "id": "q03",
+      "split": "dev",
+      "question_type": "metadata_filter",
+      "question": "What three components of the RAG Triad are evaluated during input and output filtering to detect potentially malicious outputs?",
+      "expected_answer": "Context relevance, groundedness, and question/answer relevance.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 8,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Evaluate responses using the RAG Triad: Assess context relevance, groundedness, and question/answer relevance to identify potentially malicious outputs.",
+      "alternative_evidence_quotes": [],
+      "filter": {
+        "section_type": "mitigation"
+      },
+      "gold_risk_id": "LLM01",
+      "gold_section_type": "mitigation",
+      "notes": "Metadata filter test (mitigation). Note: 'What is the RAG Triad?' also appears as a reference link on p35."
+    },
+    {
+      "id": "q04",
+      "split": "dev",
+      "question_type": "conditional_exception",
+      "question": "Why are restrictions placed inside a system prompt insufficient on their own to guarantee against sensitive information disclosure?",
+      "expected_answer": "System prompt restrictions about returned data types may not always be honored and can be bypassed via prompt injection or other methods.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 11,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Adding restrictions within the system prompt about data types that the LLM should return can provide mitigation against sensitive information disclosure. However, such restrictions may not always be honored and could be bypassed via prompt injection or other methods.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM02",
+      "gold_section_type": "description",
+      "notes": "Two-sentence evidence testing chunk coherence and exception clause."
+    },
+    {
+      "id": "q05",
+      "split": "dev",
+      "question_type": "paraphrase",
+      "question": "How can exposing training data through poorly configured model outputs enable inversion attacks, as seen in the Proof Pudding incident?",
+      "expected_answer": "Disclosed training data lets attackers extract sensitive information or reconstruct inputs; in Proof Pudding (CVE-2019-20634), it enabled model extraction and inversion to bypass ML email filters.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 11,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Revealing training data can expose models to inversion attacks, where attackers extract sensitive information or reconstruct inputs. For instance, as demonstrated in the 'Proof Pudding' attack (CVE-2019-20634), disclosed training data facilitated model extraction and inversion, allowing attackers to circumvent security controls in machine learning algorithms and bypass email filters.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM02",
+      "gold_section_type": "examples",
+      "notes": "Paraphrase + multi-sentence evidence."
+    },
+    {
+      "id": "q06",
+      "split": "dev",
+      "question_type": "direct",
+      "question": "How can LoRA adapters create supply-chain security risks in collaborative merges or on popular inference deployment platforms?",
+      "expected_answer": "A malicious LoRA adapter downloaded or merged into an existing model can compromise the integrity and security of the pretrained base model.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 16,
+      "alternative_gold_pages": [],
+      "evidence_quote": "The method increases efficiency but create new risks, where a malicious LorA adapter compromises the integrity and security of the pretrained base model. This can happen both in collaborative model merge environments but also exploiting the support for LoRA from popular inference deployment platforms such as vLMM and OpenLLM where adapters can be downloaded and applied to a deployed model.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM03",
+      "gold_section_type": "examples",
+      "notes": "Direct supply-chain risk question."
+    },
+    {
+      "id": "q07",
+      "split": "dev",
+      "question_type": "metadata_filter",
+      "question": "What inventory and monitoring practices using BOMs are recommended to mitigate AI licensing risks?",
+      "expected_answer": "Create an inventory of all license types using BOMs, audit software, tools, and datasets regularly, use automated license management tools for real-time monitoring, train teams, and keep detailed licensing docs in BOMs.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 17,
+      "alternative_gold_pages": [],
+      "evidence_quote": "To mitigate AI licensing risks, create an inventory of all types of licenses involved using BOMs and conduct regular audits of all software, tools, and datasets, ensuring compliance and transparency through BOMs. Use automated license management tools for real-time monitoring and train teams on licensing models. Maintain detailed licensing documentation in BOMs.",
+      "alternative_evidence_quotes": [],
+      "filter": {
+        "section_type": "mitigation"
+      },
+      "gold_risk_id": "LLM03",
+      "gold_section_type": "mitigation",
+      "notes": "Metadata filter test separating licensing mitigation (p17) from licensing risk examples (p15)."
+    },
+    {
+      "id": "q08",
+      "split": "dev",
+      "question_type": "paraphrase",
+      "question": "Why can an embedded poisoning backdoor turn a model into a 'sleeper agent' that is hard to detect during normal evaluation?",
+      "expected_answer": "The backdoor leaves the model's normal behavior untouched until a specific trigger activates the change, making it difficult to detect with standard tests.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 20,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Such backdoors may leave the model's behavior untouched until a certain trigger causes it to change. This may make such changes hard to test for and detect, in effect creating the opportunity for a model to become a sleeper agent.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM04",
+      "gold_section_type": "description",
+      "notes": "Paraphrase on backdoor triggers."
+    },
+    {
+      "id": "q09",
+      "split": "dev",
+      "question_type": "metadata_filter",
+      "question": "How should sandboxing and anomaly detection be combined to protect models from untrusted training data sources?",
+      "expected_answer": "Use strict sandboxing to restrict model exposure to unverified data sources and apply anomaly detection techniques to filter out adversarial data.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 21,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Implement strict sandboxing to limit model exposure to unverified data sources. Use anomaly detection techniques to filter out adversarial data.",
+      "alternative_evidence_quotes": [],
+      "filter": {
+        "section_type": "mitigation"
+      },
+      "gold_risk_id": "LLM04",
+      "gold_section_type": "mitigation",
+      "notes": "Metadata filter test (mitigation)."
+    },
+    {
+      "id": "q10",
+      "split": "dev",
+      "question_type": "direct",
+      "question": "How does Improper Output Handling differ from Overreliance?",
+      "expected_answer": "Improper Output Handling concerns validating and sanitizing LLM outputs before passing them downstream, whereas Overreliance concerns excessive trust in the accuracy and appropriateness of LLM outputs.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 23,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Improper Output Handling differs from Overreliance in that it deals with LLM-generated outputs before they are passed downstream whereas Overreliance focuses on broader concerns around overdependence on the accuracy and appropriateness of LLM outputs.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM05",
+      "gold_section_type": "description",
+      "notes": "Direct comparison question."
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "question_type": "metadata_filter",
+      "question": "In a marketing campaign email generator, how can unsanitized LLM output cause XSS attacks against recipients?",
+      "expected_answer": "An attacker manipulates the LLM to embed malicious JavaScript inside dynamic email templates; without output sanitization, vulnerable email clients execute the script and trigger XSS.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 25,
+      "alternative_gold_pages": [],
+      "evidence_quote": "An LLM is used to generate dynamic email templates for a marketing campaign. An attacker manipulates the LLM to include malicious JavaScript within the email content. If the application doesn't properly sanitize the LLM output, this could lead to XSS attacks on recipients who view the email in vulnerable email clients.",
+      "alternative_evidence_quotes": [],
+      "filter": {
+        "section_type": "scenarios"
+      },
+      "gold_risk_id": "LLM05",
+      "gold_section_type": "scenarios",
+      "notes": "Metadata filter test (scenarios) spanning a continuation page whose section heading starts on p24."
+    },
+    {
+      "id": "q12",
+      "split": "dev",
+      "question_type": "conditional_exception",
+      "question": "Why should authorization and privilege separation not be delegated to an LLM, and how should multi-privilege agent tasks be designed instead?",
+      "expected_answer": "Such controls must be deterministic and auditable, which LLMs are not suited for; instead, tasks requiring different access levels should be split across multiple least-privilege agents.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 32,
+      "alternative_gold_pages": [],
+      "evidence_quote": "These controls need to occur in a deterministic, auditable manner, and LLMs are not (currently) conducive to this. In cases where an agent is performing tasks, if those tasks require different levels of access, then multiple agents should be used, each configured with the least privileges needed to perform the desired tasks.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM07",
+      "gold_section_type": "mitigation",
+      "notes": "Tests cross-page continuation mitigation paragraph (starts at bottom of p31 and completes on p32)."
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "question_type": "paraphrase",
+      "question": "How could revealing hidden business thresholds such as daily transfer or loan ceilings inside a banking chatbot's instructions aid an attacker?",
+      "expected_answer": "Exposing limits like a $5,000 daily transaction limit or $10,000 total loan cap reveals internal rules that attackers can exploit to exceed limits or bypass controls.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 31,
+      "alternative_gold_pages": [],
+      "evidence_quote": "For example - There is a banking application that has a chatbot and its system prompt may reveal information like \"The Transaction limit is set to $5000 per day for a user. The Total Loan Amount for a user is $10,000\". This information allows the attackers to bypass the security controls in the application like doing transactions more than the set limit or bypassing the total loan amount.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM07",
+      "gold_section_type": "examples",
+      "notes": "Paraphrase avoiding exact terms 'Internal Rules' and 'Transaction limit'."
+    },
+    {
+      "id": "q14",
+      "split": "dev",
+      "question_type": "paraphrase",
+      "question": "What legal and operational outcome occurred in the real-world airline chatbot incident caused by factual inaccuracies?",
+      "expected_answer": "Air Canada's chatbot gave false information to travelers, causing operational disruptions, legal complications, and a successful lawsuit against the airline.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 36,
+      "alternative_gold_pages": [],
+      "evidence_quote": "For example, Air Canada's chatbot provided misinformation to travelers, leading to operational disruptions and legal complications. The airline was successfully sued as a result.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM09",
+      "gold_section_type": "examples",
+      "notes": "Paraphrase without mentioning Air Canada in the query."
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "question_type": "direct",
+      "question": "How do attackers exploit hallucinated library names in AI coding assistants to compromise software projects?",
+      "expected_answer": "They identify nonexistent package names frequently suggested by coding assistants and publish malicious packages under those names so unsuspecting developers install them.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 38,
+      "alternative_gold_pages": [],
+      "evidence_quote": "Attackers experiment with popular coding assistants to find commonly hallucinated package names. Once they identify these frequently suggested but nonexistent libraries, they publish malicious packages with those names to widely used repositories. Developers, relying on the coding assistant's suggestions, unknowingly integrate these poised packages into their software. As a result, the attackers gain unauthorized access, inject malicious code, or establish backdoors, leading to significant security breaches and compromising user data.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM09",
+      "gold_section_type": "scenarios",
+      "notes": "Direct scenario question."
+    },
+    {
+      "id": "q16",
+      "split": "test",
+      "question_type": "conditional_exception",
+      "question": "Which two controls do not prevent Excessive Agency directly, yet help limit the damage when unwanted extension actions happen?",
+      "expected_answer": "Logging and monitoring extension/downstream activity, and implementing rate-limiting to cap undesirable actions within a given period.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 28,
+      "alternative_gold_pages": [],
+      "evidence_quote": "The following options will not prevent Excessive Agency, but can limit the level of damage caused:\n\n• Log and monitor the activity of LLM extensions and downstream systems to identify where undesirable actions are taking place, and respond accordingly.\n\n• Implement rate-limiting to reduce the number of undesirable actions that can take place within a given time period, increasing the opportunity to discover undesirable actions through monitoring before significant damage can occur.",
+      "alternative_evidence_quotes": [],
+      "filter": null,
+      "gold_risk_id": "LLM06",
+      "gold_section_type": "mitigation",
+      "notes": "Holdout test topic (LLM06). Multi-bullet evidence testing chunk boundary preservation."
+    },
+    {
+      "id": "q17",
+      "split": "test",
+      "question_type": "metadata_filter",
+      "question": "In the personal email assistant attack scenario, what three changes stop an indirect prompt injection from forwarding sensitive messages to an attacker?",
+      "expected_answer": "Use a read-only mail extension (eliminate excessive functionality), authenticate via OAuth with read-only scope (eliminate excessive permissions), and require manual user review before sending (eliminate excessive autonomy).",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 29,
+      "alternative_gold_pages": [],
+      "evidence_quote": "This could be avoided by:\n\n• eliminating excessive functionality by using an extension that only implements mail-reading capabilities,\n\n• eliminating excessive permissions by authenticating to the user's email service via an OAuth session with a read-only scope, and/or\n\n• eliminating excessive autonomy by requiring the user to manually review and hit 'send' on every mail drafted by the LLM extension.",
+      "alternative_evidence_quotes": [],
+      "filter": {
+        "section_type": "scenarios"
+      },
+      "gold_risk_id": "LLM06",
+      "gold_section_type": "scenarios",
+      "notes": "Holdout test topic (LLM06) + metadata filter (scenarios). Note: 'mailbox' also appears in mitigation p27."
+    },
+    {
+      "id": "q18",
+      "split": "test",
+      "question_type": "metadata_filter",
+      "question": "What access-control and dataset partitioning steps are recommended to prevent unauthorized retrieval across user groups sharing a vector database?",
+      "expected_answer": "Implement fine-grained access controls and permission-aware vector/embedding stores with strict logical and access partitioning of datasets.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 34,
+      "alternative_gold_pages": [
+        35
+      ],
+      "evidence_quote": "Implement fine-grained access controls and permission-aware vector and embedding stores. Ensure strict logical and access partitioning of datasets in the vector database to prevent unauthorized access between different classes of users or different groups.",
+      "alternative_evidence_quotes": [
+        "A permission-aware vector database should be implemented to restrict access and ensure that only authorized groups can access their specific information."
+      ],
+      "filter": {
+        "section_type": "mitigation"
+      },
+      "gold_risk_id": "LLM08",
+      "gold_section_type": "mitigation",
+      "notes": "Holdout test topic (LLM08) + metadata filter (mitigation). Multi-tenant leaks also appear in examples (p33) and scenario mitigation (p35)."
+    },
+    {
+      "id": "q19",
+      "split": "test",
+      "question_type": "paraphrase",
+      "question": "Why can adding Retrieval-Augmented Generation (RAG) reduce a chatbot's usefulness in emotionally sensitive conversations even when its answers become more factual?",
+      "expected_answer": "RAG can unintentionally alter a foundation model's behavior by improving factual accuracy while reducing emotional intelligence or empathy in responses.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 34,
+      "alternative_gold_pages": [
+        35
+      ],
+      "evidence_quote": "Retrieval Augmentation can inadvertently alter the foundational model's behavior. For example, while factual accuracy and relevance may increase, aspects like emotional intelligence or empathy can diminish, potentially reducing the model's effectiveness in certain applications.",
+      "alternative_evidence_quotes": [
+        "After Retrieval Augmentation, the foundational model's behavior can be altered in subtle ways, such as reducing emotional intelligence or empathy in responses."
+      ],
+      "filter": null,
+      "gold_risk_id": "LLM08",
+      "gold_section_type": "examples",
+      "notes": "Holdout test topic (LLM08). Paraphrase with two valid evidence pages (p34 examples and p35 scenarios)."
+    },
+    {
+      "id": "q20",
+      "split": "test",
+      "question_type": "direct",
+      "question": "What is Denial of Wallet (DoW) in cloud-based LLM applications?",
+      "expected_answer": "An attack that triggers a high volume of LLM operations to exploit pay-per-use cloud pricing, imposing unsustainable financial costs on the provider.",
+      "gold_source_id": "owasp-llm-top10-2025",
+      "gold_page": 39,
+      "alternative_gold_pages": [
+        41
+      ],
+      "evidence_quote": "By initiating a high volume of operations, attackers exploit the cost-per-use model of cloudbased AI services, leading to unsustainable financial burdens on the provider and risking financial ruin.",
+      "alternative_evidence_quotes": [
+        "An attacker generates excessive operations to exploit the pay-per-use model of cloud-based AI services, causing unsustainable costs for the service provider."
+      ],
+      "filter": null,
+      "gold_risk_id": "LLM10",
+      "gold_section_type": "examples",
+      "notes": "Holdout test topic (LLM10). Documents both p39 example and p41 scenario as valid evidence."
+    }
+  ]
+}

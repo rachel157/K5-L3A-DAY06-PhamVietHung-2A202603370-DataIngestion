@@ -1,0 +1,75 @@
+{
+  "description": "10 pre-locked source text positions selected across LLM01-LLM10 prior to chunking/retrieval experiments for manual Chunk Coherence grading (0-2 scale).",
+  "positions": [
+    {
+      "position_id": "pos01",
+      "page": 7,
+      "risk_id": "LLM01",
+      "section_type": "description",
+      "anchor_quote": "While techniques like Retrieval Augmented Generation (RAG) and fine-tuning aim to make LLM outputs more relevant and accurate"
+    },
+    {
+      "position_id": "pos02",
+      "page": 12,
+      "risk_id": "LLM02",
+      "section_type": "mitigation",
+      "anchor_quote": "Implement data sanitization to prevent user data from entering the training model."
+    },
+    {
+      "position_id": "pos03",
+      "page": 16,
+      "risk_id": "LLM03",
+      "section_type": "examples",
+      "anchor_quote": "LoRA is a popular fine-tuning technique that enhances modularity by allowing pre-trained layers to be bolted onto an existing LLM."
+    },
+    {
+      "position_id": "pos04",
+      "page": 20,
+      "risk_id": "LLM04",
+      "section_type": "description",
+      "anchor_quote": "Data poisoning can target different stages of the LLM lifecycle, including pre-training (learning from general data), fine-tuning"
+    },
+    {
+      "position_id": "pos05",
+      "page": 23,
+      "risk_id": "LLM05",
+      "section_type": "description",
+      "anchor_quote": "Improper Output Handling differs from Overreliance in that it deals with LLM-generated outputs before they are passed downstream"
+    },
+    {
+      "position_id": "pos06",
+      "page": 27,
+      "risk_id": "LLM06",
+      "section_type": "examples",
+      "anchor_quote": "An LLM extension has permissions on downstream systems that are not needed for the intended operation of the application."
+    },
+    {
+      "position_id": "pos07",
+      "page": 30,
+      "risk_id": "LLM07",
+      "section_type": "description",
+      "anchor_quote": "It's important to understand that the system prompt should not be considered a secret, nor should it be used as a security control."
+    },
+    {
+      "position_id": "pos08",
+      "page": 33,
+      "risk_id": "LLM08",
+      "section_type": "examples",
+      "anchor_quote": "In multi-tenant environments where multiple classes of users or applications share the same vector database"
+    },
+    {
+      "position_id": "pos09",
+      "page": 36,
+      "risk_id": "LLM09",
+      "section_type": "description",
+      "anchor_quote": "One of the major causes of misinformation is hallucination—when the LLM generates content that seems accurate but is fabricated."
+    },
+    {
+      "position_id": "pos10",
+      "page": 40,
+      "risk_id": "LLM10",
+      "section_type": "mitigation",
+      "anchor_quote": "Restrict or obfuscate the exposure of `logit_bias` and `logprobs` in API responses."
+    }
+  ]
+}
